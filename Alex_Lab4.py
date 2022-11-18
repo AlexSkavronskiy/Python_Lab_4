@@ -15,14 +15,16 @@ def clicked():  # Функция срабатывающая при нажати�
 
     res = "Welcome the\nworld Witcher\n"
     l = "{}".format(txt.get())  # Считываем введеное 3-x значное число
-    number = int(l)
+    if not l or len(l) != 3:
+        lbl.configure(text='Введите 3-х значное число\n\n')
 
-    lbl.configure(text=res + str(''.join(text[0:5])) + '-' + str(''.join(text[number + 1:number + 5])) + '-' +
+    else:
+        number = int(l)
+        lbl.configure(text=res + str(''.join(text[0:5])) + '-' + str(''.join(text[number + 1:number + 5])) + '-' +
                        str(''.join(text[2 * number + 1:2 * number + 4])) + '-' +
                        str(''.join(text[3 * number + 1:3 * number + 3])))
 
-    if not number or len(str(number)) != 3:
-        lbl.configure(text='Введите 3-х значное число\n\n')
+
 
 # Создаем окно
 window = Tk()
@@ -39,6 +41,8 @@ txt.grid(column=1, row=0)
 # Создаем кнопку
 btn = Button(window, text='Сгенирировать \n ключ', bg='black',
              fg='lime', font=('Comic Sans MS', 12, 'bold'), command=clicked)
+
+
 btn.grid(column=1, row=1)
 
 # Добавляем картинку
@@ -49,4 +53,3 @@ bg_logo.grid(row=1, column=0)
 window.mainloop()
 
 pyglet.app.run()
-
