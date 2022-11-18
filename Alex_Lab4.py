@@ -15,16 +15,15 @@ def clicked():  # Функция срабатывающая при нажати�
 
     res = "Welcome the\nworld Witcher\n"
     l = "{}".format(txt.get())  # Считываем введеное 3-x значное число
+
     if not l or len(l) != 3:
         lbl.configure(text='Введите 3-х значное число\n\n')
 
     else:
         number = int(l)
         lbl.configure(text=res + str(''.join(text[0:5])) + '-' + str(''.join(text[number + 1:number + 5])) + '-' +
-                       str(''.join(text[2 * number + 1:2 * number + 4])) + '-' +
-                       str(''.join(text[3 * number + 1:3 * number + 3])))
-
-
+                           str(''.join(text[2 * number + 1:2 * number + 4])) + '-' +
+                           str(''.join(text[3 * number + 1:3 * number + 3])))
 
 # Создаем окно
 window = Tk()
@@ -35,13 +34,12 @@ lbl.grid(column=0, row=0)
 
 # Создаем строку для ввода
 txt = Entry(window, width=10, font=('Comic Sans MS', 15, 'bold'), bg='black',
-             fg='lime')
+            fg='lime')
 txt.grid(column=1, row=0)
 
 # Создаем кнопку
 btn = Button(window, text='Сгенирировать \n ключ', bg='black',
              fg='lime', font=('Comic Sans MS', 12, 'bold'), command=clicked)
-
 
 btn.grid(column=1, row=1)
 
