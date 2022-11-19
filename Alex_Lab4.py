@@ -21,9 +21,9 @@ def clicked():  # Функция срабатывающая при нажати�
 
     else:
         number = int(l)
-        lbl.configure(text=res + str(''.join(text[0:5])) + '-' + str(''.join(text[number + 1:number + 5])) + '-' +
-                           str(''.join(text[2 * number + 1:2 * number + 4])) + '-' +
-                           str(''.join(text[3 * number + 2:3 * number + 4])))
+        lbl.configure(text=res + str(''.join(text[0:5])) + '-' + str(''.join(text[number + 6:number + 10])) + '-' +
+                           str(''.join(text[2 * number + 11:2 * number + 14])) + '-' +
+                           str(''.join(text[3 * number + 15:3 * number + 17])))
 
 # Создаем окно
 window = Tk()
